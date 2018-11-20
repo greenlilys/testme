@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>come on!</title>
+</head>
+<body>
+	<script>
+		// 冒泡排序
+		var arr = [2,1,6,5,8,3,7,9,10,12,0];
+		function maoPao(arr){
+			for(var i =0;i<arr.length-1;i++){
+				for(var j =0;j<arr.length-i-1;j++){
+					if(arr[j] > arr[j+1]){
+						var tem = arr[j];
+						arr[j] = arr[j+1];
+						arr[j+1] = tem;
+					}
+				}
+			};			
+		}
+		maoPao(arr);
+		console.log(arr);//[0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 12]
+		
+		//获取url地址的查询字符串
+		function getData(){
+			var foo = window.location.search;
+			var arg = [],
+				obj = {};
+			if(foo.length > 0){
+				var str = foo.substring(1);
+				arg = str.split('&');
+			}else{
+				return false;
+			}
+			for(var i =0;i<arg.length;i++){
+				var item = arg[i].split('=');
+				key = decodeURIComponent(item[0]);
+				value = decodeURIComponent(item[1]);
+				obj[key] = value;
+			};
+			return obj;
+
+		}
+
+		
+		
+	</script>
+</body>
+</html>
