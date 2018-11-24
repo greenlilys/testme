@@ -54,6 +54,79 @@
 		}
 		console.log(setCode())
 
+		//快速排序
+		 function quicksort(element){
+		 	if(element.length <= 1){
+		 		return element;
+		 	}
+		 	var pivotIndex = Math.floor(element.length / 2);
+		 	var pivot = element.splice(pivotIndex,1)[0];		 	
+		 	var left = [];
+		 	var right = [];
+		 	for(var i =0;i<element.length;i++){
+		 		if(element[i] > pivot){
+		 			right.push(element[i]);
+		 		}else{
+		 			left.push(element[i]);
+		 		}		 		
+		 	}
+		 	return quicksort(left).concat([pivot],quicksort(right));
+		 }
+
+		 var elements = [5,9,2,7,3,8,6,8,6,5,4,2];
+		 console.log(quicksort(elements));
+
+		 // 数组去重
+		 
+		 function rep(arr){
+		 	for(var i =0;i<arr.length;i++){
+		 		if(arr.indexOf(arr[i]) != i){
+		 			arr.splice(i,1);
+		 			i--;
+		 		}
+		 	}
+		 	return arr;
+		 }
+
+		 function fn(arr){
+		 	arr.filter(function(ele,index,self){
+		 		return self.indexOf(ele) === index;
+		 	})
+		 }
+
+		 // 求和
+		var total = [0,1,2,3];
+		var results = total.reduce(function(accu,curr){
+			return accu + curr;
+		},10);
+
+
+
+		var resulta = [{x:1},{x:5},{x:8},{x:6}].reduce(function(accu,cur){
+			return accu + cur.x;
+		},0)
+
+		//计算数组中元素的出现次数
+		var names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
+		function slat(arr){		
+			arr.reduce(function(accu,cur){				
+					if(cur in accu){
+						accu[cur]++;
+					}else{
+						accu[cur] = 1;
+					}
+					return accu;				
+			},{})
+		}
+		function sends(obj){
+			var num = 0;
+			var result = {};
+			for(var k in obj){
+				if(obj[k] >= num){
+					result[k] = obj[k];
+				}
+			}
+		}
 
 		
 	</script>
