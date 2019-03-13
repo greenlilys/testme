@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+
+	ul,li,body{padding:0;margin:0;}
+	li{list-style:none;}
+	.navbox li{float:left;padding:10px 20px;border:1px solid #ccc;cursor:pointer;}
+	.active{background:red;color:#fff;}
+	/*.navbox li:hover{background:red;color:#fff;}*/
+	</style>
+</head>
+<body>
+
+<ul style="overflow: hidden;border:" class="navbox">
+	<li>首页</li>
+	<li>新闻</li>
+	<li>时政</li>
+	<li>体育</li>
+</ul>
+<span class="num">456789</span>	
+
+<script src="js/jquery.min.js"></script>
+<script>
+	$(function(){
+		$('.navbox').click(function(){
+			$(this).find('li').css('color','red')
+
+		})
+	
+		// $('.navbox').click(function(){
+		// 	$('.num').show()
+		// },function(){
+		// 	$('.num').hide()
+		// })
+	
+		// $(".navbox li").on('click',function(){
+			
+		// 	$(this).addClass('active');
+		// 	$(this).siblings().removeClass('active');
+		// })
+	})
+</script>
+</body>
+</html>
